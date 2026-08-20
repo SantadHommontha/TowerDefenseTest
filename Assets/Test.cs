@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 
@@ -12,7 +12,7 @@ public class Test : MonoBehaviour
     [SerializeField] private bool ff;
 
     
-   
+   [SerializeField] private Rigidbody rigidbody;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +23,7 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
 
