@@ -2,12 +2,8 @@ using UnityEngine;
 
 public class AArray : MonoBehaviour
 {
-    public string message1;
-    public string message2;
-    public string message3;
-    public string message4;
-    public string message5;
 
+    
 
     public string[] messages;
 
