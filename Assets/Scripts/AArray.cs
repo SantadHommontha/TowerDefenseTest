@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class AArray : MonoBehaviour
 {
-
-    
-
-
+   
+    public string[] messages;
 
     public float timer = 0;
+    public int index = 0;
     void Start()
     {
 
@@ -18,26 +17,13 @@ public class AArray : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 1 && timer <= 2)
+        if (timer >= 1)
         {
-            Debug.Log(message1);
+            timer = 0;
+            Debug.Log(messages[index]);
+            index++;
         }
-        else if (timer >= 2 && timer <= 3)
-        {
-            Debug.Log(message2);
-        }
-        else if (timer >= 3 && timer <= 4)
-        {
-            Debug.Log(message3);
-        }
-        else if (timer >= 4 && timer <= 5)
-        {
-            Debug.Log(message4);
-        }
-        else if (timer >= 5 && timer <= 6)
-        {
-            Debug.Log(message5);
-        }
+
 
     }
 }
