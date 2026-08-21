@@ -14,8 +14,12 @@ public class Enemy : MonoBehaviour
     public float value = 0;
     public float speed = 0.1f;
     public int index = 0;
-
+    public int nextIndex = 0;
     [SerializeField] private bool start = false;
+
+
+
+    
 
     void Start()
     {
@@ -25,23 +29,27 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (value >= 1 || startPos == null)
-        {
 
-            startPos = points[index];
-            targetPos = points[index + 1];
-            value = 0;
+        if (index >= points.Count - 1) return;
+       
+
+        startPos = points[index];
+        targetPos = points[index + 1];
+
+        value += speed * Time.deltaTime;
+
+        Vector3 newPosition = Vector3.Lerp(startPos.position, targetPos.position, value);
+
+        transform.position = newPosition;
+
+        if (value >= 1)
+        {
             index++;
-        }
-        else
-        {
-            value += speed * Time.deltaTime;
-            Vector3 newPosition = Vector3.Lerp(startPos.position,targetPos.position,value);
-        
-            transform.position = newPosition;
+            value = 0;
         }
 
 
-        
     }
+        
+    
 }
