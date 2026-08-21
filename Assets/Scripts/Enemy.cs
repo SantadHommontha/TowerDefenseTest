@@ -18,8 +18,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool start = false;
 
 
-
     
+   
 
     void Start()
     {
